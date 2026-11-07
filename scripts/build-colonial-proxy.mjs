@@ -1,13 +1,5 @@
-// Input:  public/data/rail_{active,disused}.geojson with opened_year (build-rail-sea.mjs).
-// Output: public/data/colonial.geojson. Proxy layer: lines whose first opening year is <= 1941, the last year before the Pacific War reached Southeast Asia, with the cited source.
-// parseStartYear and classify keep the rule for raw ways that tests cover. No company property: the sources hold no
-// reliable SS/NIS value. Run only while data-raw/colonial_digitized.geojson is missing.
-// Usage: node scripts/build-colonial-proxy.mjs
-import { existsSync, readFileSync, writeFileSync } from "node:fs";
-import path from "node:path";
-
-const RAW = "data-raw";
-const OUT = path.join("public", "data", "colonial.geojson");
+// Year parsing and the raw-way rule shared by the data scripts. The old-lines layer itself is derived in the browser
+// by deriveColonial (src/components/atlas/atlas-data.ts), so no file is written here.
 const MAX_YEAR = 1941;
 
 // Accepts 1895, 1895-03, 1895-03-01, ~1900, 1890s. A decade resolves to its first year.
@@ -26,26 +18,3 @@ export function classify(feature) {
   if (p.building || isClosed(feature.geometry.coordinates)) return { keep: false, reason: "building or closed outline, not track" };
   return { keep: true, year };
 }
-
-function main() {
-  if (existsSync(path.join(RAW, "colonial_digitized.geojson"))) {
-    console.error("data-raw/colonial_digitized.geojson exists: publish the digitized network instead of this proxy.");
-    process.exit(1);
-  }
-  const features = [];
-  for (const n of ["rail_active", "rail_disused"]) {
-    for (const f of JSON.parse(readFileSync(path.join("public", "data", `${n}.geojson`), "utf8")).features) {
-      const year = f.properties.opened_year;
-      if (typeof year !== "number" || year > MAX_YEAR) continue;
-      features.push({
-        type: "Feature",
-        properties: { ...f.properties, year_built: year, year_source: f.properties.opened_year_source },
-        geometry: f.geometry,
-      });
-    }
-  }
-  writeFileSync(OUT, JSON.stringify({ type: "FeatureCollection", features }));
-  console.log(`${features.length} features opened by ${MAX_YEAR} -> ${OUT}`);
-}
-
-if (process.argv[1] && path.resolve(process.argv[1]) === path.resolve("scripts/build-colonial-proxy.mjs")) main();

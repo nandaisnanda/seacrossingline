@@ -1,8 +1,8 @@
 # Data QA
 
-## Old-lines layer (colonial.geojson)
+## Old-lines layer
 
-`scripts/build-colonial-proxy.mjs` copies every line from `rail_active` and `rail_disused` whose `opened_year` is 1941 or earlier. The layer does not reconstruct the network of that time. It misses old lines with no sourced year. The cut-off is the last year before the Pacific War reached Southeast Asia.
+`deriveColonial` in `src/components/atlas/atlas-data.ts` selects, in the browser, every line from `rail_active` and `rail_disused` whose `opened_year` is 1941 or earlier. The layer does not reconstruct the network of that time. It misses old lines with no sourced year. The cut-off is the last year before the Pacific War reached Southeast Asia.
 
 ## How years reach a line
 
@@ -22,14 +22,13 @@ A station with no year of its own takes the earliest opening among dated lines w
 
 OSM tags Den Chai–Chiang Khong as `railway=rail`, but Thai Wikipedia schedules the opening for 2571 BE (2028), so `build-rail-sea.mjs` leaves it out.
 
-## Digitizing the 1925 map
+## The 1925 Reitsma map
 
-1. Download the 1925 Reitsma map from Wikimedia Commons, after checking its license on the file page.
-2. Georeference it in QGIS with at least 8 control points spread across Java. Stations and junctions that still exist make good points.
-3. Digitize the lines as a new layer. Set `name` on each line, plus `company` (`SS` or `NIS`) and `year_built` where the map or an archive source supports them.
-4. Export GeoJSON in EPSG:4326 to `data-raw/colonial_digitized.geojson`.
+Do not digitize this map before 2029. Wikimedia Commons [deleted the complete Reitsma book](https://commons.wikimedia.org/wiki/Commons:Deletion_requests/File:Page1-1024px-Boekoe_Peringatan_dari_Staatsspoor-en_Tramwegen_di_Hindia-Belanda_1875-1925.pdf.jpg) and scheduled undeletion for 2029, 71 years after the author's reported death in 1958. The discussion found no source for that death year, so check it before relying on the date. When the map is clear to use, georeference it in QGIS with at least 8 control points, digitize to `data-raw/colonial_digitized.geojson` in EPSG:4326, and add a build step for it.
 
-Then rerun the colonial task. It validates the file, simplifies it at 0.0003 and publishes it with the Reitsma citation.
+## Undated unnamed track
+
+The 8,051 km of unnamed OSM ways stay undated. They have no page or tag to read a year from, and this project does not estimate years.
 
 <!-- time-attributes:start -->
 ## Time attributes
@@ -44,13 +43,10 @@ Then rerun the colonial task. It validates the file, simplifies it at 0.0003 and
 | rail_disused | opened_year | 306 / 2188 | 14.0% |
 | rail_active | opened_year | 1761 / 3440 | 51.2% |
 | stations | opened_year | 2671 / 3696 | 72.3% |
-| colonial | year_built | 983 / 983 | 100.0% |
-| reactivation | source_year | 5 / 5 | 100.0% |
-| reactivation | target_year | 1 / 5 | 20.0% |
+| reactivation | source_year | 12 / 12 | 100.0% |
+| reactivation | target_year | 1 / 12 | 8.3% |
 
 By length: active opened_year 17,145 of 25,824 km (66.4%); disused opened_year 3,616 of 7,111 km (50.8%); disused closed_year 2,480 of 7,111 km (34.9%).
 
-Under 30% of disused lines have `closed_year`, so the timeline shows most lines as always present.
-
-Proposed, not implemented: a small caption on the timeline reading "Tahun tutup hanya tersedia untuk sebagian jalur".
+A disused line with no year shows only in 2026, so past years look sparser than the real network. The timeline panel carries a caption saying closing years exist for only some lines.
 <!-- time-attributes:end -->

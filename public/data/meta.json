@@ -1,14 +1,14 @@
 {
   "sample": false,
   "updated": "2026-11-07",
-  "notes": "colonial holds lines with a sourced opening year up to 1941; it does not reconstruct the network of that time. Lines without a sourced year stay undated; coverage is in docs/DATA_QA.md.",
+  "notes": "The old-lines layer is derived in the browser from lines with a sourced opening year up to 1941; it does not reconstruct the network of that time. Lines without a sourced year stay undated; coverage is in docs/DATA_QA.md.",
   "sources": [
     {
       "layer": "rail_active, rail_disused, reactivation (geometry)",
       "name": "OpenStreetMap contributors",
       "license": "ODbL 1.0",
       "url": "https://www.openstreetmap.org/copyright",
-      "note": "Retrieved 2026-11-06 to 2026-11-07 via Overpass API for all 11 Southeast Asian countries; scripts/fetch-osm-sea.mjs, scripts/build-rail-sea.mjs; clipped to those countries, joined by name and years, Douglas-Peucker. scripts/route-between.py snaps reactivation lines to this geometry"
+      "note": "Retrieved 2026-11-06 to 2026-11-07 via Overpass API for all 11 Southeast Asian countries; scripts/fetch-osm-sea.mjs, scripts/build-rail-sea.mjs; clipped to those countries, joined by name and years, Douglas-Peucker. scripts/route-between.py snaps reactivation lines to this geometry. Cirebon-Kadipaten and most of Semarang-Rembang follow ways OSM tags railway=razed, retrieved 2026-11-07"
     },
     {
       "layer": "rail_active, rail_disused (opened_year, closed_year)",
@@ -29,7 +29,7 @@
       "name": "DJKA Kemenhub, via InvestorTrust",
       "license": "Cited facts",
       "url": "https://investortrust.id/business/80596/jalur-ka-tidur-2233-km-masuk-rencana-reaktivasi-anggaran-siap",
-      "note": "Line list from the 2025 DJKA briefing. Lengths from detik 2017, Kontan 2014, ANTARA 2025 and Jurnal Renwilko 2026. The Bisnis.com articles returned HTTP 403 and were not read. All URLs in docs/reactivation_sources.md"
+      "note": "Line list from the 2025 DJKA briefing. Lengths from detik, Kontan, ANTARA, Jurnal Renwilko and Indonesian Wikipedia. The Bisnis.com articles returned HTTP 403 and were not read. All URLs in docs/reactivation_sources.md"
     },
     {
       "layer": "stations, volcanoes",
@@ -43,7 +43,7 @@
       "name": "Derived from rail_active and rail_disused",
       "license": "ODbL 1.0, CC BY-SA 4.0, CC0",
       "url": "https://www.openstreetmap.org/copyright",
-      "note": "scripts/build-colonial-proxy.mjs; lines with opened_year up to 1941, each with year_source; see docs/DATA_QA.md"
+      "note": "deriveColonial in src/components/atlas/atlas-data.ts; lines with opened_year up to 1941, each with year_source; see docs/DATA_QA.md"
     },
     {
       "layer": "neighbors, bathymetry, borders, cities",

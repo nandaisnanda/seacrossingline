@@ -14,7 +14,6 @@ const QA = path.join("docs", "DATA_QA.md");
 const TAGS = ["end_date", "disused:end_date", "abandoned:end_date"];
 const START = "<!-- time-attributes:start -->";
 const END = "<!-- time-attributes:end -->";
-const THRESHOLD = 30;
 
 const load = (name) => JSON.parse(readFileSync(path.join(DATA, `${name}.geojson`), "utf8"));
 const tagged = new Map();
@@ -45,7 +44,6 @@ const isOsm = (p) => String(p.closed_year_source).includes("openstreetmap.org");
 const closed = count(disused, "closed_year");
 const closedOsm = count(disused, "closed_year", isOsm);
 const total = disused.features.length;
-const colonial = load("colonial");
 const reactivation = load("reactivation");
 const active = load("rail_active");
 const stations = load("stations");
@@ -67,20 +65,15 @@ const lines = [
   row("rail_disused", "opened_year", count(disused, "opened_year"), total),
   row("rail_active", "opened_year", count(active, "opened_year"), active.features.length),
   row("stations", "opened_year", count(stations, "opened_year"), stations.features.length),
-  row("colonial", "year_built", count(colonial, "year_built"), colonial.features.length),
   row("reactivation", "source_year", count(reactivation, "source_year"), reactivation.features.length),
   row("reactivation", "target_year", count(reactivation, "target_year"), reactivation.features.length),
   "",
   `By length: active opened_year ${km(active, "opened_year")}; disused opened_year ${km(disused, "opened_year")}; disused closed_year ${km(disused, "closed_year")}.`,
 ];
-if ((closed / total) * 100 < THRESHOLD) {
-  lines.push(
-    "",
-    `Under ${THRESHOLD}% of disused lines have \`closed_year\`, so the timeline shows most lines as always present.`,
-    "",
-    'Proposed, not implemented: a small caption on the timeline reading "Tahun tutup hanya tersedia untuk sebagian jalur".',
-  );
-}
+lines.push(
+  "",
+  "A disused line with no year shows only in 2026, so past years look sparser than the real network. The timeline panel carries a caption saying closing years exist for only some lines.",
+);
 const section = [START, ...lines, END].join("\n");
 const doc = readFileSync(QA, "utf8");
 const a = doc.indexOf(START);

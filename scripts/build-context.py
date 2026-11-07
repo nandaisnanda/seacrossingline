@@ -104,7 +104,7 @@ def main():
 
     bands = []
     for code, depth in DEPTHS.items():
-        polys = clip([shape(f["geometry"]) for f in load(f"ne_10m_bathymetry_{code}")], 0.06, 0.04)
+        polys = clip([shape(f["geometry"]) for f in load(f"ne_10m_bathymetry_{code}")], 0.1, 0.06)
         print(f"  depth {depth}: {len(polys)} polygons")
         if polys:
             bands.append({"type": "Feature", "properties": {"depth": depth, "source": f"Natural Earth 10m bathymetry {code} v5.1.1"},

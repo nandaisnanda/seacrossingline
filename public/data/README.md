@@ -1,6 +1,6 @@
 # SEA Crossing Line data
 
-Scripts build these files from OpenStreetMap and cited sources; see the data pipeline in the root `README.md`. They are not official survey data. `colonial.geojson` holds lines with a sourced opening year up to 1941 (`docs/DATA_QA.md`), and `reactivation.geojson` holds 5 of the 13 listed lines (`docs/reactivation_sources.md`). The coastline comes from Natural Earth 10m v5.1.1 and is public domain.
+Scripts build these files from OpenStreetMap and cited sources; see the data pipeline in the root `README.md`. They are not official survey data. The atlas derives its old-lines layer in the browser from lines with a sourced opening year up to 1941 (`docs/DATA_QA.md`). `reactivation.geojson` covers the 13 listed lines as 12 features (`docs/reactivation_sources.md`). The coastline comes from Natural Earth 10m v5.1.1 and is public domain.
 
 All files are GeoJSON `FeatureCollection`s using EPSG:4326 coordinates. Point coordinates are `[longitude, latitude]`.
 
@@ -10,7 +10,6 @@ All files are GeoJSON `FeatureCollection`s using EPSG:4326 coordinates. Point co
 - `reactivation.geojson`: `LineString` features with `name`, `stage` (`rencana`, `proses`, `selesai`), `length_km`, optional `source_url`, `source_year`, and `target_year`.
 - `stations.geojson`, `volcanoes.geojson`: `Point` features from OSM with `name`, plus `kind`, optional `opened_year`, `opened_year_source`, `opened_year_basis` (`line` when the year comes from the line under the station) and `closed_year` for stations, or optional `ele` for volcanoes. Built by `scripts/build-landmarks.mjs`.
 - `neighbors.geojson`, `bathymetry.geojson`, `borders.geojson`, `cities.geojson`: Natural Earth context (`scripts/build-context.py`). `bathymetry` has one nested feature per `depth`.
-- `colonial.geojson`: `LineString` features with `name`, integer `year_built` (up to 1941), `year_source` and `osm_ids`.
 - `meta.json`: the sample-data flag, update date, and source list used in the atlas footer and sample stamp.
 
 Completed reactivation routes (`stage: "selesai"`) are treated as active and removed from the disused layer when names or coordinates match. Features follow the timeline strictly. A line or station hides before its `opened_year`. A disused line with both years draws as running until `closed_year`, then as closed. A feature with no year shows only in 2026. A reactivation plan shows from its `source_year`.

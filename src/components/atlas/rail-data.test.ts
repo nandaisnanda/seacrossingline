@@ -1,5 +1,6 @@
 import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
+import { deriveColonial, type AtlasCollection } from "./atlas-data";
 
 type Fc = {
   features: {
@@ -43,7 +44,10 @@ it("every opened_year has a source", () => {
 });
 
 it("every old line opened by 1941 and names its source", () => {
-  const colonial = load("colonial").features;
+  const colonial = deriveColonial(
+    load("rail_active") as AtlasCollection,
+    load("rail_disused") as AtlasCollection,
+  ).features;
   expect(colonial.length).toBeGreaterThan(0);
   for (const f of colonial) {
     expect(f.properties["year_built"]).toBeLessThanOrEqual(1941);

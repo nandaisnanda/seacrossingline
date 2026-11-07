@@ -21,7 +21,8 @@
 - [x] Add opening and closing years from OSM tags, Wikidata and Wikipedia, with a source on each feature, and filter rail and stations on the timeline.
 - [x] Replace the Java-based timeline eras with five that hold across Southeast Asia, and name each city as it was called in the selected year.
 - [x] Open a city record and zoom in on a click, with nearby lines and stations for the selected year.
-- [ ] Digitize the 8 unresolved reactivation lines listed in `docs/reactivation_sources.md`.
-- [ ] Georeference and digitize the 1925 Reitsma map for the old-lines layer, which today holds only lines with a sourced opening year.
-- [ ] Date the 8,051 km of unnamed OSM ways, which have no page to read a year from.
-- [ ] Decide on the timeline caption proposed in `docs/DATA_QA.md`, since closing years cover 35% of disused track length.
+- [x] Route all 13 reactivation lines over OSM geometry with cited lengths, using razed ways where the track is gone.
+- [ ] Digitize the 1925 Reitsma map, blocked until 2029 by copyright (see `docs/DATA_QA.md`).
+- [x] Decide on the 8,051 km of unnamed OSM ways: they stay undated, since no source gives a year.
+- [x] Add the timeline caption about incomplete closing years, in both languages.
+- [x] Derive the old-lines layer in the browser, trim bathymetry, add share image support, and add Escape and focus handling to the about dialog.

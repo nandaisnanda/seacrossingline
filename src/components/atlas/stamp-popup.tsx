@@ -34,8 +34,9 @@ export function StampPopup({
       ),
     ),
   ].filter((value): value is string => typeof value === "string" && URL.canParse(value));
-  const openedYear =
-    properties["opened_year"] ?? properties["year_built"] ?? properties["source_year"];
+  // A plan's source_year dates the announcement. It says nothing about when the line opened.
+  const openedYear = properties["opened_year"] ?? properties["year_built"];
+  const headerYear = stage ? properties["source_year"] : openedYear;
   const lengthKm =
     typeof properties["length_km"] === "number"
       ? Number(properties["length_km"])
@@ -60,7 +61,7 @@ export function StampPopup({
         <X size={17} />
       </Button>
       <span className="stamp-eyebrow">
-        {t.record} · {String(openedYear ?? t.yearUnknown)}
+        {t.record} · {String(headerYear ?? t.yearUnknown)}
       </span>
       <h2>{String(properties["name"] ?? "Jalur kereta")}</h2>
       {stage && (
@@ -78,10 +79,17 @@ export function StampPopup({
           <small>{t["company"]}</small>
           <strong>{String(properties["company"] ?? properties["operator"] ?? "—")}</strong>
         </div>
-        <div>
-          <small>{t.built}</small>
-          <strong>{openedYear === undefined ? t.yearUnknown : String(openedYear)}</strong>
-        </div>
+        {stage ? (
+          <div>
+            <small>{t.sourceYear}</small>
+            <strong>{String(properties["source_year"] ?? t.yearUnknown)}</strong>
+          </div>
+        ) : (
+          <div>
+            <small>{t.built}</small>
+            <strong>{openedYear === undefined ? t.yearUnknown : String(openedYear)}</strong>
+          </div>
+        )}
         {isDisused && (
           <div>
             <small>{t.closed}</small>

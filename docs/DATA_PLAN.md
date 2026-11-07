@@ -1,6 +1,6 @@
 # Data plan: replacing sample GeoJSON with sourced data
 
-Status: planning only. Nothing has been downloaded or generated.
+Status: historical. This plan guided the first import for Java. The live pipeline is in `README.md` and the current data state is in `docs/DATA_QA.md`, so the "current state" and timeline statements below no longer apply.
 
 ## 0. Current state
 

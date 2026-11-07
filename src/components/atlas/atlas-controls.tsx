@@ -178,6 +178,7 @@ export function TimeControl({
       <p className="time-era" aria-live="polite">
         {textForYear(year, language)}
       </p>
+      <p className="time-caption">{t.closedYearCaption}</p>
     </section>
   );
 }
@@ -386,6 +387,20 @@ export function AboutData({
   showColonialNote: boolean;
   t: AtlasText;
 }) {
+  const dialog = useRef<HTMLElement>(null);
+  useEffect(() => {
+    if (!open) return;
+    const opener = document.activeElement as HTMLElement | null;
+    dialog.current?.focus();
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      opener?.focus();
+    };
+  }, [open, onClose]);
   if (!open) return null;
   return (
     <div
@@ -396,6 +411,8 @@ export function AboutData({
       }}
     >
       <section
+        ref={dialog}
+        tabIndex={-1}
         className="data-dialog"
         role="dialog"
         aria-modal="true"

@@ -57,6 +57,9 @@ const INITIAL_VISIBILITY: Visibility = {
 };
 type DataMeta = { sample: boolean; updated?: string; notes?: string; sources?: DataSource[] };
 
+// Crawlers need absolute URLs, so these tags ship only when the deployed address is known.
+const SITE_URL = (import.meta.env["VITE_SITE_URL"] as string | undefined)?.replace(/\/$/, "");
+
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
@@ -71,10 +74,17 @@ export const Route = createFileRoute("/")({
         content: "Atlas interaktif jalur kereta aktif dan nonaktif di Asia Tenggara.",
       },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
-      { name: "twitter:card", content: "summary_large_image" },
+      ...(SITE_URL
+        ? [
+            { property: "og:url", content: `${SITE_URL}/` },
+            { property: "og:image", content: `${SITE_URL}/og.png` },
+            { property: "og:image:width", content: "1200" },
+            { property: "og:image:height", content: "630" },
+            { name: "twitter:card", content: "summary_large_image" },
+          ]
+        : []),
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: SITE_URL ? [{ rel: "canonical", href: `${SITE_URL}/` }] : [],
   }),
   component: AtlasPage,
 });
@@ -106,6 +116,10 @@ function AtlasPage() {
     typeof window === "undefined" ||
     window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
   const t: AtlasText = atlasCopy[language];
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   useEffect(() => {
     let cancelled = false;
@@ -269,6 +283,7 @@ function AtlasPage() {
     (key: keyof Visibility) => setVisible((current) => ({ ...current, [key]: !current[key] })),
     [],
   );
+  const closeAbout = useCallback(() => setAboutOpen(false), []);
   const setScaleFromMap = useCallback((value: ScaleState) => setScale(value), []);
   const chooseLine = useCallback(
     (name: string) => {
@@ -351,7 +366,7 @@ function AtlasPage() {
           onCity={chooseCity}
         />
         {!mapReady && !error && (
-          <div className="map-loading" role="status" aria-label="Memuat peta">
+          <div className="map-loading" role="status" aria-label={t.loadingMap}>
             <span />
           </div>
         )}
@@ -413,7 +428,7 @@ function AtlasPage() {
                   hovered.feature.properties["status"] ??
                   hovered.feature.properties["operator"] ??
                   hovered.feature.properties["company"] ??
-                  "jalur",
+                  t.lineFallback,
               )}
             </span>
           </div>
@@ -440,7 +455,7 @@ function AtlasPage() {
         {error && <ErrorCartouche message={error} t={t} />}
         <AboutData
           open={aboutOpen}
-          onClose={() => setAboutOpen(false)}
+          onClose={closeAbout}
           sources={meta.sources ?? []}
           showColonialNote={Boolean(meta.notes)}
           t={t}

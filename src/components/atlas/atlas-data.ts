@@ -52,16 +52,11 @@ const propertySchemas = {
       target_year: z.number().int().optional(),
     })
     .passthrough(),
-  colonial: z
-    .object({
-      name: z.string(),
-      company: z.enum(["SS", "NIS"]).optional(),
-      year_built: z.number().int().optional(),
-    })
-    .passthrough(),
 } satisfies Record<string, z.ZodType>;
 
-export type AtlasFile = keyof typeof propertySchemas;
+/** Layers fetched as files. The old-lines layer is derived from two of them, see deriveColonial. */
+export type LoadedFile = keyof typeof propertySchemas;
+export type AtlasFile = LoadedFile | "colonial";
 export type AtlasProperties = Record<string, unknown>;
 export type AtlasFeature = {
   type: "Feature";
@@ -74,15 +69,14 @@ export type AtlasFeature = {
 export type AtlasCollection = { type: "FeatureCollection"; features: AtlasFeature[] };
 export type AtlasData = Record<AtlasFile, AtlasCollection>;
 
-export const atlasFiles: Record<AtlasFile, string> = {
+export const atlasFiles: Record<LoadedFile, string> = {
   land: "land.geojson",
   active: "rail_active.geojson",
   disused: "rail_disused.geojson",
   reactivation: "reactivation.geojson",
-  colonial: "colonial.geojson",
 };
 
-export function validateAtlasCollection(file: AtlasFile, input: unknown): AtlasCollection {
+export function validateAtlasCollection(file: LoadedFile, input: unknown): AtlasCollection {
   const parsedCollection = collectionSchema.safeParse(input);
   if (!parsedCollection.success) {
     throw new Error(`Berkas ${atlasFiles[file]} tidak sesuai GeoJSON FeatureCollection.`);
@@ -118,10 +112,34 @@ export async function loadAtlasData(
       const response = await fetcher(`${root}data/${file}`);
       if (!response.ok)
         throw new Error(`Berkas ${file} tidak dapat dibuka (HTTP ${response["status"]}).`);
-      return [key, validateAtlasCollection(key as AtlasFile, await response.json())] as const;
+      return [key, validateAtlasCollection(key as LoadedFile, await response.json())] as const;
     }),
   );
-  return Object.fromEntries(entries) as AtlasData;
+  const loaded = Object.fromEntries(entries) as Omit<AtlasData, "colonial">;
+  return { ...loaded, colonial: deriveColonial(loaded.active, loaded.disused) };
+}
+
+/** Last year of the old-lines layer: the year before the Pacific War reached Southeast Asia. */
+export const COLONIAL_LAST_YEAR = 1941;
+
+/** Lines with a sourced opening year up to COLONIAL_LAST_YEAR. It does not reconstruct the network of that time. */
+export function deriveColonial(...layers: AtlasCollection[]): AtlasCollection {
+  const features: AtlasFeature[] = [];
+  for (const layer of layers) {
+    for (const feature of layer.features) {
+      const year = feature.properties["opened_year"];
+      if (typeof year !== "number" || year > COLONIAL_LAST_YEAR) continue;
+      features.push({
+        ...feature,
+        properties: {
+          ...feature.properties,
+          year_built: year,
+          year_source: feature.properties["opened_year_source"],
+        },
+      });
+    }
+  }
+  return { type: "FeatureCollection", features };
 }
 
 /** The last year of the timeline: the one year where a feature with no sourced date is known to exist. */

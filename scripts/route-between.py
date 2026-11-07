@@ -10,11 +10,17 @@ edges are consecutive vertices. Simplification in build-rail-data.mjs drops the 
 vertex at many T-junctions, so a dead-end way may join another component by a short
 connector to the nearest point on that line (at most --gap-m metres, default GAP_M).
 Each route reports its connector metres. Each station is snapped to the nearest graph
-vertex, and the shortest path joins consecutive stops. No straight line is ever drawn
+vertex, or to the nearest point on a line when simplification left no vertex within
+reach, and the shortest path joins consecutive stops. No straight line is ever drawn
 between stations.
 
-A line is accepted only if a cited source states a length and the routed length is
-within 30% of it. Everything else is reported as unresolved with a reason.
+Razed track: two corridors survive in OSM only as railway=razed, which the published rail
+layers leave out. The ways named in RAZED_NAMES join the graph for this script only.
+A stop with no OSM station may use a place coordinate from `places` in the config.
+A line may set `validate_stops` when its stated length covers only part of the route.
+
+A line is accepted only if a cited source states a length and the routed length (or the
+`validate_stops` part of it) is within 30% of it. Everything else is reported as unresolved with a reason.
 
 Usage:
   python -I scripts/route-between.py                 # all lines, write outputs
@@ -45,6 +51,9 @@ TOLERANCE = 0.30
 MAX_SNAP_M = 1500  # station farther than this from any rail vertex is not snapped
 GAP_M = 50  # longest connector between a dead end and another line; about the 0.0004 deg simplify tolerance
 PREC = 5
+BRIDGE_NAME = "Jalur Trem Jurnatan\u2013Rembang"
+BRIDGE_M = 1000
+RAZED_NAMES = ("Jalur KA Cirebon-Kadipaten", "Jalur KA Cirebon Prujakan-Kegiren", "Jalur Trem Jurnatan–Rembang")
 
 
 def haversine_m(a, b):
@@ -74,9 +83,30 @@ def build_graph(gap_m=GAP_M):
             for a, b in zip(pts, pts[1:]):
                 if a != b:
                     g.add_edge(a, b, weight=haversine_m(a, b), layer=layer)
+    for pts in fetch_razed():
+        for a, b in zip(pts, pts[1:]):
+            if a != b and not g.has_edge(a, b):
+                g.add_edge(a, b, weight=haversine_m(a, b), layer="razed")
     if gap_m:
         add_connectors(g, gap_m)
+    bridge_named(g)
     return g
+
+
+def bridge_named(g):
+    """Join dead ends of one named corridor (BRIDGE_NAME) across simplification gaps up to BRIDGE_M."""
+    fc = json.loads((DATA / "rail_disused.geojson").read_text(encoding="utf-8"))
+    ways = [[key(c) for c in f["geometry"]["coordinates"]] for f in fc["features"] if f["properties"].get("name") == BRIDGE_NAME]
+    ways += [w for w in fetch_razed() if w[0][0] > 110]
+    ends = {n for w in ways for n in (w[0], w[-1]) if n in g and g.degree(n) <= 2}
+    comp = {n: i for i, c in enumerate(nx.connected_components(g)) for n in c}
+    for x, y in sorted(((x, y) for x in ends for y in ends if x < y and comp[x] != comp[y]),
+                       key=lambda t: haversine_m(*t)):
+        d = haversine_m(x, y)
+        if d <= BRIDGE_M and comp[x] != comp[y]:
+            g.add_edge(x, y, weight=d, layer="connector")
+            old = comp[y]
+            comp = {n: (comp[x] if c == old else c) for n, c in comp.items()}
 
 
 def add_connectors(g, gap_m):
@@ -115,13 +145,13 @@ def add_connectors(g, gap_m):
 
 def route_stats(g, coords):
     """Metres of route per layer, plus the longest single connector."""
-    by, longest = {"disused": 0.0, "active": 0.0, "connector": 0.0}, 0.0
+    by, longest = {"disused": 0.0, "active": 0.0, "razed": 0.0, "connector": 0.0}, 0.0
     for a, b in zip(coords, coords[1:]):
         e = g.edges[tuple(a), tuple(b)]
         by[e["layer"]] += e["weight"]
         if e["layer"] == "connector":
             longest = max(longest, e["weight"])
-    return {"disused_km": round(by["disused"] / 1000, 1), "active_km": round(by["active"] / 1000, 1),
+    return {"disused_km": round(by["disused"] / 1000, 1), "active_km": round(by["active"] / 1000, 1), "razed_km": round(by["razed"] / 1000, 1),
             "connector_m": round(by["connector"]), "longest_connector_m": round(longest)}
 
 
@@ -139,6 +169,19 @@ def overpass(query):
             last = e
             time.sleep(15 * 2 ** (attempt - 1))
     raise RuntimeError(f"Overpass failed: {last}")
+
+
+def fetch_razed():
+    """Razed ways of the corridors in RAZED_NAMES as vertex lists, cached in data-raw."""
+    RAW.mkdir(parents=True, exist_ok=True)
+    cache = RAW / "razed_java.json"
+    if cache.exists():
+        return [[tuple(c) for c in w] for w in json.loads(cache.read_text(encoding="utf-8"))]
+    names = "|".join(RAZED_NAMES)
+    q = f'[out:json][timeout:170];way["railway"="razed"]["name"~"^({names})$"]({JAVA_BBOX});out geom;'
+    ways = [[key((p["lon"], p["lat"])) for p in el["geometry"]] for el in overpass(q).get("elements", [])]
+    cache.write_text(json.dumps(ways), encoding="utf-8")
+    return ways
 
 
 def fetch_all_stations():
@@ -197,6 +240,20 @@ class Snapper:
         n = self.nodes[i]
         return n, haversine_m((lon, lat), n)
 
+    def on_line(self, g, lon, lat):
+        """Split the nearest edge at the point closest to (lon, lat) and return that new node."""
+        edges = list(g.edges)
+        lines = [LineString(e) for e in edges]
+        i = int(STRtree(lines).nearest(Point(lon, lat)))
+        q = nearest_points(lines[i], Point(lon, lat))[0]
+        n, (u, v) = key((q.x, q.y)), edges[i]
+        if n not in (u, v):
+            layer = g.edges[u, v]["layer"]
+            g.remove_edge(u, v)
+            g.add_edge(u, n, weight=haversine_m(u, n), layer=layer)
+            g.add_edge(n, v, weight=haversine_m(n, v), layer=layer)
+        return n, haversine_m((lon, lat), n)
+
 
 def route_stops(g, snap, stops, stations):
     """Chain shortest paths through the stops. Returns (coords, notes) or (None, reason)."""
@@ -206,6 +263,8 @@ def route_stops(g, snap, stops, stations):
         cands = []
         for st in stations.get(s, []):
             node, d = snap.nearest(st["lon"], st["lat"])
+            if d > MAX_SNAP_M:
+                node, d = snap.on_line(g, st["lon"], st["lat"])
             if d <= MAX_SNAP_M:
                 cands.append((node, d, st))
         if not stations.get(s):
@@ -269,6 +328,8 @@ def main():
     cfg = json.loads(CONFIG.read_text(encoding="utf-8"))
     names = sorted({s for ln in cfg["lines"] for s in ln["stops"]})
     stations = fetch_stations(names)
+    for name, (lon, lat) in cfg.get("places", {}).items():
+        stations[name] = [{"lon": lon, "lat": lat, "names": [name]}]
 
     features, report = [], []
     for ln in cfg["lines"]:
@@ -280,6 +341,10 @@ def main():
             continue
         km = path_length_km(coords)
         entry["routed_km"] = round(km, 1)
+        if ln.get("same_corridor_as"):
+            entry.update(status="same corridor", reason=f"drawn once as {ln['same_corridor_as']}")
+            report.append(entry)
+            continue
         entry.update(route_stats(g, coords))
         lengths = ln.get("lengths") or []
         if not lengths:
@@ -287,12 +352,21 @@ def main():
                          reason=f"routed {km:.1f} km, but no source states a length for these terminals")
             report.append(entry)
             continue
-        devs = [(abs(km - x["km"]) / x["km"], x) for x in lengths]
+        check_km = km
+        if ln.get("validate_stops"):
+            part, err = route_stops(g, snap, ln["validate_stops"], stations)
+            if err:
+                entry.update(status="unresolved", reason=err)
+                report.append(entry)
+                continue
+            check_km = path_length_km(part)
+            entry["validated_km"] = round(check_km, 1)
+        devs = [(abs(check_km - x["km"]) / x["km"], x) for x in lengths]
         dev, match = min(devs, key=lambda t: t[0])
         entry.update(stated_km=[x["km"] for x in lengths], deviation=round(dev, 3))
         if dev > TOLERANCE:
             entry.update(status="unresolved",
-                         reason=f"routed {km:.1f} km deviates {dev:.0%} from the closest stated {match['km']} km (limit {TOLERANCE:.0%})")
+                         reason=f"routed {check_km:.1f} km deviates {dev:.0%} from the closest stated {match['km']} km (limit {TOLERANCE:.0%})")
             report.append(entry)
             continue
         props = {"name": ln["name"], "stage": ln.get("stage", "rencana"), "length_km": round(km, 1),
@@ -310,9 +384,10 @@ def main():
         (RAW / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=1), encoding="utf-8")
     for e in report:
         detail = e.get("reason") or f"{e['routed_km']} km"
-        stats = {k: e[k] for k in ("disused_km", "active_km", "connector_m", "longest_connector_m") if k in e}
+        stats = {k: e[k] for k in ("validated_km", "disused_km", "active_km", "razed_km", "connector_m", "longest_connector_m") if k in e}
         print(f"{e['status']:10} {e['name']}: {detail} {stats or ''}")
-    print(f"\n{len(features)} resolved, {len(report) - len(features)} unresolved")
+    same = sum(e["status"] == "same corridor" for e in report)
+    print(f"\n{len(features)} drawn, {same} same corridor, {len(report) - len(features) - same} unresolved")
     return 0
 
 

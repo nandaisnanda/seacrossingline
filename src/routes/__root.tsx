@@ -84,14 +84,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         name: "description",
         content: "Jelajahi jaringan kereta api Asia Tenggara dari masa kolonial hingga hari ini.",
       },
-      { property: "og:title", content: "SEA Crossing Line — Atlas Kereta Api" },
-      {
-        property: "og:description",
-        content:
-          "Jelajahi jaringan kereta aktif, nonaktif, kolonial, dan reaktivasi di Asia Tenggara.",
-      },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       {

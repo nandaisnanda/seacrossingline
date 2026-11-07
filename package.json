@@ -14,7 +14,7 @@
     "test:watch": "vitest",
     "data:fetch": "node scripts/fetch-osm-active.mjs && node scripts/fetch-osm-disused.mjs",
     "data:build": "node scripts/build-rail-data.mjs",
-    "data:sea": "node scripts/fetch-osm-sea.mjs && node scripts/fetch-wikidata-years.mjs && node scripts/fetch-wikipedia-years.mjs && node scripts/build-line-years.mjs && node scripts/build-rail-sea.mjs && node scripts/build-landmarks.mjs && node scripts/enrich-time-osm.mjs && node scripts/build-colonial-proxy.mjs",
+    "data:sea": "node scripts/fetch-osm-sea.mjs && node scripts/fetch-wikidata-years.mjs && node scripts/fetch-wikipedia-years.mjs && node scripts/build-line-years.mjs && node scripts/build-rail-sea.mjs && node scripts/build-landmarks.mjs && node scripts/enrich-time-osm.mjs",
     "data:qa": "bun scripts/validate-data.ts public/data"
   },
   "overrides": {
