@@ -1,0 +1,56 @@
+{
+  "_comment": "Input for scripts/route-between.py. stops = terminal stations plus named waypoints, in order. lengths = only figures a cited source states for this line and these terminals; empty means the route cannot be validated and stays unresolved. target_year only where a source states it for that line.",
+  "source_url": "https://investortrust.id/business/80596/jalur-ka-tidur-2233-km-masuk-rencana-reaktivasi-anggaran-siap",
+  "source_year": 2025,
+  "lines": [
+    { "name": "Sukabumi–Cianjur–Padalarang", "stops": ["Sukabumi", "Cianjur", "Padalarang"], "lengths": [] },
+    { "name": "Cicalengka–Jatinangor–Tanjungsari", "stops": ["Cicalengka", "Jatinangor", "Tanjungsari"], "lengths": [] },
+    {
+      "name": "Cirebon–Kadipaten",
+      "stops": ["Cirebon", "Kadipaten"],
+      "lengths": [{ "km": 47, "url": "https://finance.detik.com/berita-ekonomi-bisnis/3501896/rencana-hidupkan-1600-km-rel-mati-di-jawa", "year": 2017 }]
+    },
+    {
+      "name": "Banjar–Cijulang",
+      "stops": ["Banjar", "Cijulang"],
+      "lengths": [{ "km": 83, "url": "https://finance.detik.com/berita-ekonomi-bisnis/3501896/rencana-hidupkan-1600-km-rel-mati-di-jawa", "year": 2017 }]
+    },
+    {
+      "name": "Purwokerto–Wonosobo",
+      "stops": ["Purwokerto", "Wonosobo"],
+      "lengths": [{ "km": 92, "url": "https://finance.detik.com/berita-ekonomi-bisnis/3501896/rencana-hidupkan-1600-km-rel-mati-di-jawa", "year": 2017 }]
+    },
+    { "name": "Semarang–Demak–Rembang", "stops": ["Semarang Tawang", "Demak", "Rembang"], "lengths": [] },
+    {
+      "name": "Kedungjati–Ambarawa",
+      "stops": ["Kedungjati", "Ambarawa"],
+      "lengths": [{ "km": 36.7, "url": "https://industri.kontan.co.id/news/kai-akan-hidupkan-jalur-ka-kedungjati-ambarawa", "year": 2014 }]
+    },
+    {
+      "name": "Jombang–Babat–Tuban",
+      "stops": ["Jombang", "Babat", "Tuban"],
+      "lengths": [{ "km": 111, "url": "https://finance.detik.com/berita-ekonomi-bisnis/3501896/rencana-hidupkan-1600-km-rel-mati-di-jawa", "year": 2017 }]
+    },
+    {
+      "name": "Kalisat–Panarukan",
+      "stops": ["Kalisat", "Panarukan"],
+      "lengths": [{ "km": 70, "url": "https://ejournal.unesa.ac.id/index.php/renwilko/article/view/77380", "year": 2026 }]
+    },
+    { "name": "Semarang–Demak–Juana–Rembang", "stops": ["Semarang Tawang", "Demak", "Juwana", "Rembang"], "lengths": [] },
+    {
+      "name": "Madiun–Slahung",
+      "stops": ["Madiun", "Slahung"],
+      "lengths": [
+        { "km": 40, "url": "https://jatim.antaranews.com/berita/985457/pemkab-ponorogo-apresiasi-positif-rencana-kemenhub-aktifkan-jalur-ka", "year": 2025 },
+        { "km": 62, "url": "https://finance.detik.com/berita-ekonomi-bisnis/3501896/rencana-hidupkan-1600-km-rel-mati-di-jawa", "year": 2017 }
+      ],
+      "target_year": 2030
+    },
+    {
+      "name": "Sidoarjo–Tulangan–Tarik",
+      "stops": ["Sidoarjo", "Tulangan", "Tarik"],
+      "lengths": [{ "km": 22, "url": "https://finance.detik.com/berita-ekonomi-bisnis/3501896/rencana-hidupkan-1600-km-rel-mati-di-jawa", "year": 2017 }]
+    },
+    { "name": "Kamal–Sumenep", "stops": ["Kamal", "Sumenep"], "lengths": [] }
+  ]
+}

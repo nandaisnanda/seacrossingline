@@ -1,0 +1,63 @@
+{
+  "sample": false,
+  "updated": "2026-11-07",
+  "notes": "colonial holds lines with a sourced opening year up to 1941; it does not reconstruct the network of that time. Lines without a sourced year stay undated; coverage is in docs/DATA_QA.md.",
+  "sources": [
+    {
+      "layer": "rail_active, rail_disused, reactivation (geometry)",
+      "name": "OpenStreetMap contributors",
+      "license": "ODbL 1.0",
+      "url": "https://www.openstreetmap.org/copyright",
+      "note": "Retrieved 2026-11-06 to 2026-11-07 via Overpass API for all 11 Southeast Asian countries; scripts/fetch-osm-sea.mjs, scripts/build-rail-sea.mjs; clipped to those countries, joined by name and years, Douglas-Peucker. scripts/route-between.py snaps reactivation lines to this geometry"
+    },
+    {
+      "layer": "rail_active, rail_disused (opened_year, closed_year)",
+      "name": "Wikipedia (id, en, vi)",
+      "license": "CC BY-SA 4.0",
+      "url": "https://www.wikipedia.org/",
+      "note": "Per-feature opened_year_source and closed_year_source; scripts/enrich-closed-year.mjs, scripts/fetch-wikipedia-years.mjs, scripts/build-line-years.mjs (review rules in the script)"
+    },
+    {
+      "layer": "rail_active, rail_disused, stations (opened_year, closed_year)",
+      "name": "Wikidata",
+      "license": "CC0",
+      "url": "https://www.wikidata.org/",
+      "note": "Items named by OSM wikidata and wikipedia tags; scripts/fetch-wikidata-years.mjs; lines and stations only"
+    },
+    {
+      "layer": "reactivation (line list, lengths)",
+      "name": "DJKA Kemenhub, via InvestorTrust",
+      "license": "Cited facts",
+      "url": "https://investortrust.id/business/80596/jalur-ka-tidur-2233-km-masuk-rencana-reaktivasi-anggaran-siap",
+      "note": "Line list from the 2025 DJKA briefing. Lengths from detik 2017, Kontan 2014, ANTARA 2025 and Jurnal Renwilko 2026. The Bisnis.com articles returned HTTP 403 and were not read. All URLs in docs/reactivation_sources.md"
+    },
+    {
+      "layer": "stations, volcanoes",
+      "name": "OpenStreetMap contributors (landmarks)",
+      "license": "ODbL 1.0",
+      "url": "https://www.openstreetmap.org/copyright",
+      "note": "Retrieved 2026-11-07 via Overpass API; scripts/build-landmarks.mjs; modern names; stations with opened_year follow the timeline; volcano filter rule in the script"
+    },
+    {
+      "layer": "colonial",
+      "name": "Derived from rail_active and rail_disused",
+      "license": "ODbL 1.0, CC BY-SA 4.0, CC0",
+      "url": "https://www.openstreetmap.org/copyright",
+      "note": "scripts/build-colonial-proxy.mjs; lines with opened_year up to 1941, each with year_source; see docs/DATA_QA.md"
+    },
+    {
+      "layer": "neighbors, bathymetry, borders, cities",
+      "name": "Natural Earth 10m admin-0, bathymetry, boundary lines, populated places v5.1.1",
+      "license": "Public domain",
+      "url": "https://www.naturalearthdata.com/downloads/10m-physical-vectors/",
+      "note": "scripts/build-context.py; clipped to the map frame; depth bands 200 to 9000 m; modern borders; period city spellings listed in the script"
+    },
+    {
+      "layer": "land",
+      "name": "Natural Earth 10m admin-0 countries v5.1.1",
+      "license": "Public domain",
+      "url": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/",
+      "note": "11 Southeast Asian countries; scripts/build-land.py; simplified at 0.004 deg"
+    }
+  ]
+}

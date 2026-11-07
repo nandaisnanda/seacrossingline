@@ -1,0 +1,228 @@
+export const atlasCopy = {
+  id: {
+    appTitle: "SEA CROSSING LINE",
+    subtitle: "Atlas Kereta Api Asia Tenggara Lintas Masa",
+    kicker: "Atlas kereta bergambar · Asia Tenggara",
+    legend: "Legenda",
+    active: "Kereta aktif",
+    activeNote: "Beroperasi",
+    disused: "Jalur mati",
+    disusedNote: "Tidak beroperasi & ditinggalkan",
+    reactivation: "Reaktivasi",
+    reactivationNote: "Rencana dan pekerjaan pemulihan",
+    colonial: "Jalur lama (dibuka s.d. 1941)",
+    colonialNote: "1867–1941",
+    timeline: "JALUR KERETA DARI MASA KE MASA",
+    eras: [
+      "Rel-rel pertama",
+      "Jaringan meluas",
+      "Perang Pasifik",
+      "Kemerdekaan dan penutupan jalur",
+      "Jalur-jalur baru",
+    ],
+    play: "Putar linimasa",
+    pause: "Jeda linimasa",
+    about: "Tentang data",
+    openLayers: "Buka legenda",
+    closeLayers: "Tutup legenda",
+    aboutStats: [
+      "25.824 km rel aktif",
+      "7.111 km rel nonaktif",
+      "3.696 stasiun",
+      "176 gunung api",
+      "44 kota",
+    ],
+    aboutYearsTitle: "Tahun dan linimasa",
+    aboutBaseTitle: "Peta dasar dan hiasan",
+    aboutCreditTitle: "Atribusi dan lisensi",
+    aboutTimeline:
+      "Tahun berasal dari tag OpenStreetMap, Wikidata, dan Wikipedia. Tahun buka mencakup 66% panjang rel aktif dan 51% rel nonaktif; tahun tutup mencakup 35% rel nonaktif. Rel dan stasiun muncul di tahun bukanya, dan rel yang kini mati tampil beroperasi sampai tahun tutupnya. Yang tanpa tahun hanya tampil di 2026, terutama ruas tanpa nama, jadi peta masa lalu lebih jarang dari kenyataan. Tahun buka adalah pembukaan pertama jalur itu, sehingga satu ruas bisa lebih muda. Dari 3.696 stasiun, 1.037 punya tahun sendiri dan 1.634 memakai tahun jalurnya, jadi aslinya bisa lebih muda.",
+    aboutTitle: "Tentang atlas dan datanya",
+    aboutBody:
+      "SEA Crossing Line memetakan rel kereta di 11 negara Asia Tenggara dari 1867 sampai 2026. Geometri rel berasal dari OpenStreetMap, jadi atlas ini bukan survei resmi dan bukan rekonstruksi arsip.",
+    colonialProxyNote:
+      "Lapisan jalur lama memuat jalur yang dibuka sampai 1941, tahun sebelum Perang Pasifik sampai ke Asia Tenggara. Jalur lama tanpa tahun bersumber tidak masuk, jadi lapisan ini tidak utuh.",
+    licenses:
+      "Data OpenStreetMap berlisensi ODbL 1.0. Tahun dari Wikipedia berlisensi CC BY-SA 4.0 dan dari Wikidata CC0. Natural Earth berstatus domain publik.",
+    caveat:
+      "Panjang jalur adalah perkiraan dari geometri peta. Lapisan reaktivasi hanya untuk Jawa: 5 dari 13 jalur Ripnas.",
+    close: "Tutup",
+    language: "Bahasa / Language",
+    scale: "Skala peta",
+    search: "Cari jalur…",
+    osmCredit: "© OpenStreetMap contributors",
+    creditRest: "(ODbL) · Wikipedia · Wikidata · Natural Earth",
+    sourcesTitle: "Sumber data",
+    record: "CATATAN JALUR",
+    status: "Status kini",
+    company: "Perusahaan / operator",
+    built: "Dibuka",
+    closed: "Ditutup",
+    yearUnknown: "Tahun belum diketahui",
+    cityRecord: "CATATAN KOTA",
+    cityFormerly: "Dulu:",
+    cityToday: "Kini:",
+    cityCountry: "Negara kini",
+    cityCapital: "ibu kota",
+    cityPopulation: "Penduduk kini",
+    cityStations: "Stasiun dalam",
+    cityFirstLine: "Jalur tertua di sekitar",
+    cityLines: "Jalur dalam",
+    cityNoLines: "Peta belum mencatat jalur di sekitar kota ini pada tahun ini.",
+    cityMoreLines: "jalur lain",
+    cityUnnamedLines: "ruas tanpa nama",
+    cityNote:
+      "Angka mengikuti tahun di linimasa. Jalur dan stasiun tanpa tahun bersumber hanya terhitung di 2026.",
+    statusActive: "Beroperasi",
+    statusDisused: "Tidak beroperasi",
+    statusAbandoned: "Ditinggalkan",
+    yearUnknownNote:
+      "Tanpa tahun bersumber, jalur ini hanya tampil di 2026 atau sejak tahun tutupnya.",
+    length: "Panjang perkiraan",
+    source: "Buka sumber",
+    year: "Tahun",
+    north: "Kembali ke utara",
+    stateOfYear: "Linimasa",
+    stationsLegend: "Stasiun dan halte",
+    volcanoesLegend: "Gunung api",
+    bordersLegend: "Batas negara modern",
+    depthLegend: "Laut lebih gelap = lebih dalam (200–9.000 m)",
+    contextNote:
+      "Daratan, kota, kedalaman laut, dan batas negara berasal dari Natural Earth. Batas negara selalu batas modern. Nama kota dan negara berubah mengikuti tahun, termasuk perubahan ejaan. Penduduk di kartu kota adalah angka modern.",
+    landmarksNote:
+      "Nama stasiun dan nama jalur memakai nama modern, juga saat linimasa di masa lalu. Gunung api tidak mengikuti linimasa.",
+    ornamentsNote:
+      "Kapal, mawar angin, garis rhumb, dan pola ombak hanya hiasan bergaya peta lama, bukan data.",
+    zoomIn: "Perbesar peta",
+    zoomOut: "Perkecil peta",
+    errorTitle: "Peta belum dapat dibuka",
+    simplifiedLand: "Garis pantai Natural Earth",
+    hemiE: "E",
+    hemiW: "W",
+    hemiN: "N",
+    hemiS: "S",
+  },
+  en: {
+    appTitle: "SEA CROSSING LINE",
+    subtitle: "A Southeast Asian Railway Atlas Through Time",
+    kicker: "An illustrated railway atlas · Southeast Asia",
+    legend: "Legend",
+    active: "Active rail",
+    activeNote: "In service",
+    disused: "Silent lines",
+    disusedNote: "Disused & abandoned",
+    reactivation: "Reactivation",
+    reactivationNote: "Renewal plans and works",
+    colonial: "Old lines (opened by 1941)",
+    colonialNote: "1867–1941",
+    timeline: "RAILWAYS THROUGH TIME",
+    eras: [
+      "The first railways",
+      "Networks spread",
+      "Pacific War",
+      "Independence and line closures",
+      "New lines",
+    ],
+    play: "Play timeline",
+    pause: "Pause timeline",
+    about: "About the data",
+    openLayers: "Open legend",
+    closeLayers: "Close legend",
+    aboutStats: [
+      "25,824 km active track",
+      "7,111 km disused track",
+      "3,696 stations",
+      "176 volcanoes",
+      "44 cities",
+    ],
+    aboutYearsTitle: "Years and the timeline",
+    aboutBaseTitle: "Base map and decoration",
+    aboutCreditTitle: "Credits and licenses",
+    aboutTimeline:
+      "Years come from OpenStreetMap tags, Wikidata and Wikipedia. Opening years cover 66% of active track length and 51% of disused; closing years cover 35% of disused. Lines and stations appear in their opening year, and a line now closed draws as running until its closing year. Anything with no year shows only in 2026, mostly unnamed sections, so past years look sparser than they were. An opening year is the first opening of the line, so one section can be younger. Of 3,696 stations, 1,037 have their own year and 1,634 take the year of their line, so they may be younger.",
+    aboutTitle: "About the atlas and its data",
+    aboutBody:
+      "SEA Crossing Line maps railways in 11 Southeast Asian countries from 1867 to 2026. Track geometry comes from OpenStreetMap, so this atlas is neither an official survey nor an archival reconstruction.",
+    colonialProxyNote:
+      "The old-lines layer holds lines opened by 1941, the year before the Pacific War reached Southeast Asia. Old lines with no sourced year stay out, so the layer is incomplete.",
+    licenses:
+      "OpenStreetMap data is licensed under ODbL 1.0. Years from Wikipedia are CC BY-SA 4.0 and from Wikidata CC0. Natural Earth is public domain.",
+    caveat:
+      "Lengths are estimates from map geometry. The reactivation layer covers Java only: 5 of the 13 Ripnas lines.",
+    close: "Close",
+    language: "Bahasa / Language",
+    scale: "Map scale",
+    search: "Search lines…",
+    osmCredit: "© OpenStreetMap contributors",
+    creditRest: "(ODbL) · Wikipedia · Wikidata · Natural Earth",
+    sourcesTitle: "Data sources",
+    record: "RAILWAY RECORD",
+    status: "Status today",
+    company: "Company / operator",
+    built: "Opened",
+    closed: "Closed",
+    yearUnknown: "Year unknown",
+    cityRecord: "CITY RECORD",
+    cityFormerly: "Formerly:",
+    cityToday: "Today:",
+    cityCountry: "Country today",
+    cityCapital: "capital",
+    cityPopulation: "Population today",
+    cityStations: "Stations within",
+    cityFirstLine: "Oldest line nearby",
+    cityLines: "Lines within",
+    cityNoLines: "The map records no line near this city in this year.",
+    cityMoreLines: "more lines",
+    cityUnnamedLines: "unnamed sections",
+    cityNote:
+      "Figures follow the year on the timeline. Lines and stations with no sourced year count only in 2026.",
+    statusActive: "Operating",
+    statusDisused: "Disused",
+    statusAbandoned: "Abandoned",
+    yearUnknownNote: "With no sourced year, this line shows only in 2026 or from its closing year.",
+    length: "Approximate length",
+    source: "Open source",
+    year: "Year",
+    north: "Reset north",
+    stateOfYear: "Timeline",
+    stationsLegend: "Stations and halts",
+    volcanoesLegend: "Volcanoes",
+    bordersLegend: "Modern country borders",
+    depthLegend: "Darker sea = deeper (200–9,000 m)",
+    contextNote:
+      "Land, cities, sea depth and borders come from Natural Earth. Borders are always modern. City and country names change with the year, including spelling. Population on a city card is a modern figure.",
+    landmarksNote:
+      "Stations and lines keep their modern names, even when the timeline is in the past. Volcanoes do not follow the timeline.",
+    ornamentsNote:
+      "Ships, the compass rose, rhumb lines and wave patterns are period decoration, not data.",
+    zoomIn: "Zoom in",
+    zoomOut: "Zoom out",
+    errorTitle: "The map could not be opened",
+    simplifiedLand: "Natural Earth coastline",
+    hemiE: "E",
+    hemiW: "W",
+    hemiN: "N",
+    hemiS: "S",
+  },
+} as const;
+
+export type AtlasLanguage = keyof typeof atlasCopy;
+export type AtlasText = {
+  [Key in keyof typeof atlasCopy.id]: (typeof atlasCopy.id)[Key] extends readonly string[]
+    ? readonly string[]
+    : string;
+};
+
+// First year of each era in `eras`. The boundaries hold across Southeast Asia: Pacific War 1942-1945,
+// independence from 1945 on, new lines such as KL ERL (2002), Boten-Vientiane (2021) and Whoosh (2023) after 1990.
+export const eraStarts = [1867, 1900, 1942, 1946, 1990] as const;
+
+export function textForYear(year: number, language: AtlasLanguage): string {
+  const index = eraStarts.reduce((found, start, i) => (year >= start ? i : found), 0);
+  return atlasCopy[language].eras[index] ?? "";
+}
+
+export const countryNames = {
+  id: { Philippines: "Filipina", Cambodia: "Kamboja", "East Timor": "Timor Leste" },
+  en: { "East Timor": "Timor-Leste" },
+} as const;

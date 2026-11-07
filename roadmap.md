@@ -1,0 +1,27 @@
+# SEA Crossing Line roadmap
+
+- [x] Recreate the Java railway atlas in Indonesian with an English toggle.
+- [x] Load the parchment design, display fonts, and MapLibre styling.
+- [x] Validate bundled GeoJSON, mark illustrative data, and reconcile completed routes.
+- [x] Add year controls, route records, search, shareable view links, and map export.
+- [x] Document GeoJSON fields, source caveats, and deployment considerations.
+- [x] Add feature tests and verify the rendered desktop/mobile preview.
+- [x] Replace the placeholder Java coastline with cited Natural Earth land geometry.
+- [x] Add a collapsible map-layer legend and rename the atlas to “Lintas Jawa”.
+- [x] Polish motion: 300–500 ms ease-out transitions, one-time line draw-on, paper record card and hover tag, edge graticule.
+- [x] Build active and disused railways from OpenStreetMap with a documented pipeline (`data:fetch`, `data:build`, `data:qa`).
+- [x] Add closing years with per-feature sources, and report year coverage in `docs/DATA_QA.md`.
+- [x] Route reactivation lines over OSM geometry with cited lengths (5 of 13 resolved).
+- [x] Show OSM attribution, per-source notes, and data tests for every published file.
+- [x] Add zoom buttons, closer zoom, zoom-scaled place labels, and responsive layouts from 360 px to 1920 px.
+- [x] Rename the atlas to "SEA Crossing Line".
+- [x] Remove the share and image export buttons.
+- [x] Add period cartography: zebra frame, cartouche, aged paper, sea ornaments, stations, volcanoes, neighbouring land and sea depth.
+- [x] Expand the atlas to all 11 Southeast Asian countries: rail, stations, volcanoes, borders, cities.
+- [x] Add opening and closing years from OSM tags, Wikidata and Wikipedia, with a source on each feature, and filter rail and stations on the timeline.
+- [x] Replace the Java-based timeline eras with five that hold across Southeast Asia, and name each city as it was called in the selected year.
+- [x] Open a city record and zoom in on a click, with nearby lines and stations for the selected year.
+- [ ] Digitize the 8 unresolved reactivation lines listed in `docs/reactivation_sources.md`.
+- [ ] Georeference and digitize the 1925 Reitsma map for the old-lines layer, which today holds only lines with a sourced opening year.
+- [ ] Date the 8,051 km of unnamed OSM ways, which have no page to read a year from.
+- [ ] Decide on the timeline caption proposed in `docs/DATA_QA.md`, since closing years cover 35% of disused track length.

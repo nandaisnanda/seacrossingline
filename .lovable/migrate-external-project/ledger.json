@@ -1,0 +1,14 @@
+{
+  "source": "code-archive",
+  "source_name": "pixel-perfect-replica-a8542719-main.zip",
+  "capabilities": [
+    {"capability":"application code and routes","source":"React/TanStack single-screen Java railway atlas","outcome":"recreated and verified in the Lovable project preview","status":"verified","next_action":"none"},
+    {"capability":"schema and records","source":"static GeoJSON; no database schema or record export detected","outcome":"preserve the existing sample railway features as explicitly labeled illustrative data and replace the placeholder outline with cited Natural Earth Java coastline","status":"verified","next_action":"none"},
+    {"capability":"railway record accuracy and source verification","source":"supplied archive labels railway features as illustrative","outcome":"sample routes remain explicitly non-authoritative; Java coastline is sourced from Natural Earth 10m land polygons v5.1.1","status":"pending","next_action":"replace railway samples with verified, licensed, cited route data before representing the atlas as authoritative"},
+    {"capability":"authentication and authorization","source":"none detected","outcome":"not applicable","status":"verified","next_action":"none"},
+    {"capability":"uploads and stored files","source":"none detected","outcome":"not applicable","status":"verified","next_action":"none"},
+    {"capability":"external providers, public APIs, and callbacks","source":"none detected","outcome":"none detected in supplied source","status":"verified","next_action":"none"},
+    {"capability":"schedules, webhooks, and secrets","source":"none detected","outcome":"not applicable","status":"verified","next_action":"none"},
+    {"capability":"deployment and cutover","source":"Lovable project preview","outcome":"preview only; publication was not requested","status":"pending","next_action":"publish when user is ready"}
+  ]
+}

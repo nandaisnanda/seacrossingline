@@ -1,0 +1,859 @@
+[
+ {
+  "match": "^KTM$",
+  "bbox": [
+   102.1,
+   2.62,
+   106,
+   7
+  ],
+  "opened": 1910,
+  "source": "https://en.wikipedia.org/wiki/KTM_East_Coast_railway_line"
+ },
+ {
+  "match": "^KTM$",
+  "bbox": [
+   99,
+   1,
+   105,
+   7
+  ],
+  "opened": 1885,
+  "source": "https://en.wikipedia.org/wiki/KTM_West_Coast_railway_line"
+ },
+ {
+  "match": "^Main Line$",
+  "bbox": [
+   95,
+   16,
+   97.5,
+   23
+  ],
+  "opened": 1884,
+  "source": "https://en.wikipedia.org/wiki/Rail_transport_in_Myanmar"
+ },
+ {
+  "match": "^Đường sắt Bắc–Nam$",
+  "source": "https://en.wikipedia.org/wiki/North%E2%80%93South_railway_(Vietnam)",
+  "opened": 1905
+ },
+ {
+  "match": "^สายใต้$",
+  "source": "https://en.wikipedia.org/wiki/Southern_Line_(Thailand)",
+  "opened": 1903
+ },
+ {
+  "match": "^สายตะวันออกเฉียงเหนือ$",
+  "source": "https://en.wikipedia.org/wiki/Northeastern_Line_(Thailand)",
+  "opened": 1896
+ },
+ {
+  "match": "^สายเหนือ$",
+  "source": "https://en.wikipedia.org/wiki/Northern_Line_(Thailand)",
+  "opened": 1896
+ },
+ {
+  "match": "^KTM Laluan kereta api Pantai Timur$",
+  "source": "https://en.wikipedia.org/wiki/KTM_East_Coast_railway_line",
+  "opened": 1910
+ },
+ {
+  "match": "^PNR South Main Line$",
+  "source": "https://en.wikipedia.org/wiki/PNR_South_Main_Line",
+  "opened": 1916,
+  "closed": 2015
+ },
+ {
+  "match": "^Jalur Kereta Api Panjang–Prabumulih$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Prabumulih%E2%80%93Panjang",
+  "opened": 1914
+ },
+ {
+  "match": "^Jalur Kereta Api Semarang–Cirebon$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Cirebon%E2%80%93Semarang",
+  "opened": 1897
+ },
+ {
+  "match": "^KTM Laluan kereta api Pantai Barat$",
+  "source": "https://en.wikipedia.org/wiki/KTM_West_Coast_railway_line",
+  "opened": 1885
+ },
+ {
+  "match": "^ທາງລົດໄຟ ລາວ-ຈີນ$",
+  "source": "https://en.wikipedia.org/wiki/Boten%E2%80%93Vientiane_railway",
+  "opened": 2021
+ },
+ {
+  "match": "^Jalur Kereta Api Kertosono–Solo Balapan$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Solo_Balapan%E2%80%93Wonokromo",
+  "opened": 1880
+ },
+ {
+  "match": "^Shwenyaung - Mongnai Railway$",
+  "source": "https://en.wikipedia.org/wiki/Shwenyaung%E2%80%93Mongnai_Railway",
+  "opened": 1997
+ },
+ {
+  "match": "^ทางรถไฟสายใต้$",
+  "source": "https://en.wikipedia.org/wiki/Southern_Line_(Thailand)",
+  "opened": 1903
+ },
+ {
+  "match": "^Jalur Kereta Api Cirebon–Kroya$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Cikampek%E2%80%93Cirebon%E2%80%93Kroya",
+  "opened": 1912
+ },
+ {
+  "match": "^ทางรถไฟสายตะวันออก$",
+  "source": "https://en.wikipedia.org/wiki/Eastern_Line_(Thailand)",
+  "opened": 1907
+ },
+ {
+  "match": "^Jalur Kereta Api Lubuk Linggau–Prabumulih$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Lubuk_Linggau%E2%80%93Prabumulih",
+  "opened": 1915
+ },
+ {
+  "match": "^Jalur Kereta Api Padalarang–Kasugihan$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Bogor%E2%80%93Padalarang%E2%80%93Kasugihan",
+  "opened": 1881
+ },
+ {
+  "match": "^Đường sắt Hà Nội - Lào Cai$",
+  "source": "https://en.wikipedia.org/wiki/Hanoi%E2%80%93L%C3%A0o_Cai_railway",
+  "opened": 1902
+ },
+ {
+  "match": "^Jalur Kereta Api Kroya–Yogyakarta$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Cilacap%E2%80%93Yogyakarta",
+  "opened": 1887
+ },
+ {
+  "match": "^Jalur Kereta Api Cikampek–Cirebon$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Cikampek%E2%80%93Cirebon%E2%80%93Kroya",
+  "opened": 1912
+ },
+ {
+  "match": "^Jalur Kereta Api Bangil–Kertosono$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Kertosono%E2%80%93Bangil",
+  "opened": 1878
+ },
+ {
+  "match": "^Jalur Kereta Api Tanah Abang–Merak$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Anyer_Kidul%E2%80%93Kampung_Bandan",
+  "opened": 1899
+ },
+ {
+  "match": "^Jalur Kereta Api Jakarta Kota–Cikampek$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Jakarta%E2%80%93Cikampek%E2%80%93Padalarang",
+  "opened": 1898
+ },
+ {
+  "match": "^Jalur Kereta Api Bangil–Kalisat$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Surabaya%E2%80%93Bangil%E2%80%93Kalisat",
+  "opened": 1878
+ },
+ {
+  "match": "^Jalur Kereta Api Bogor–Padalarang$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Bogor%E2%80%93Padalarang%E2%80%93Kasugihan",
+  "opened": 1881
+ },
+ {
+  "match": "^Jalur Kereta Api Kertapati–Prabumulih$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Prabumulih%E2%80%93Kertapati",
+  "opened": 1915
+ },
+ {
+  "match": "^Jalur Kereta Api Kwanyar - Kalianget$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_lintas_Madura",
+  "opened": 1898,
+  "closed": 1937
+ },
+ {
+  "match": "^Jalur Kereta Api Wonokromo–Kertosono$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Solo_Balapan%E2%80%93Wonokromo",
+  "opened": 1880
+ },
+ {
+  "match": "^สายกาญจนบุรี$",
+  "source": "https://en.wikipedia.org/wiki/Burma_Railway",
+  "opened": 1943,
+  "closed": 1947
+ },
+ {
+  "match": "^Burma railway$",
+  "source": "https://en.wikipedia.org/wiki/Burma_Railway",
+  "opened": 1943,
+  "closed": 1947
+ },
+ {
+  "match": "^Jalur Kereta Api Solo Balapan–Yogyakarta$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Semarang%E2%80%93Surakarta%E2%80%93Yogyakarta",
+  "opened": 1867
+ },
+ {
+  "match": "^ERL$",
+  "source": "https://en.wikipedia.org/wiki/Express_Rail_Link",
+  "opened": 2002
+ },
+ {
+  "match": "^Kalaw-Lawksawk Railway$",
+  "source": "https://en.wikipedia.org/wiki/Kalaw%E2%80%93Lawksawk_Railway",
+  "opened": 1991
+ },
+ {
+  "match": "^Jalur Kereta Api Kisaran–Rantau Prapat$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Kisaran%E2%80%93Rantau_Prapat",
+  "opened": 1937
+ },
+ {
+  "match": "^Jalur Kereta Api Medan–Tebing Tinggi$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Medan%E2%80%93Tebing_Tinggi",
+  "opened": 1915
+ },
+ {
+  "match": "^Jalur Kereta Api Jakarta Kota–Bogor$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Jakarta%E2%80%93Bogor",
+  "opened": 1871
+ },
+ {
+  "match": "^Jalur Kereta Api Cikampek–Padalarang$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Jakarta%E2%80%93Cikampek%E2%80%93Padalarang",
+  "opened": 1898
+ },
+ {
+  "match": "^Siam Railway$",
+  "source": "https://en.wikipedia.org/wiki/Burma_Railway",
+  "opened": 1943,
+  "closed": 1947
+ },
+ {
+  "match": "^Jalur Kereta Api Medan–Besitang$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Besitang%E2%80%93Medan",
+  "opened": 1887,
+  "closed": 2008
+ },
+ {
+  "match": "^Jalur Trem Demak–Purwodadi–Blora$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_trem_Demak%E2%80%93Blora",
+  "opened": 1888,
+  "closed": 1996
+ },
+ {
+  "match": "^Jalur Kereta Api Makassar–Parepare$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Makassar%E2%80%93Parepare",
+  "opened": 2022
+ },
+ {
+  "match": "^Jalur kereta api Muaro Kalaban–Muaro–Pekanbaru$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Muaro_Kalaban%E2%80%93Muaro%E2%80%93Pekanbaru",
+  "opened": 1924
+ },
+ {
+  "match": "^Segmen Sigli–Beureunun$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_lintas_Aceh",
+  "opened": 1884
+ },
+ {
+  "match": "^Kalaw-Thazi Railway$",
+  "source": "https://en.wikipedia.org/wiki/Kalaw%E2%80%93Thazi_Railway",
+  "opened": 1921
+ },
+ {
+  "match": "^Segmen Lhokseumawe–Idi$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_lintas_Aceh",
+  "opened": 1884
+ },
+ {
+  "match": "^Jalur Kereta Api Brumbung–Gambringan$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Brumbung%E2%80%93Gambringan",
+  "opened": 1922
+ },
+ {
+  "match": "^Jalur Kereta Api Rembang–Bojonegoro$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Rembang%E2%80%93Bojonegoro",
+  "opened": 1900,
+  "closed": 1999
+ },
+ {
+  "match": "^Jalur Kereta Api Purwokerto–Wonosobo$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Purwokerto%E2%80%93Wonosobo",
+  "opened": 1896
+ },
+ {
+  "match": "^Jalur Kereta Api Saketi–Bayah$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Saketi%E2%80%93Bayah",
+  "opened": 1944,
+  "closed": 1951
+ },
+ {
+  "match": "^Panay Railway$",
+  "source": "https://en.wikipedia.org/wiki/Panay_Railways",
+  "opened": 1907,
+  "closed": 1989
+ },
+ {
+  "match": "^PNR North Main Line$",
+  "source": "https://en.wikipedia.org/wiki/PNR_North_Main_Line",
+  "opened": 1892,
+  "closed": 1997
+ },
+ {
+  "match": "^Jalur Kereta Api Banjar-Cijulang$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Banjar%E2%80%93Cijulang",
+  "opened": 1916,
+  "closed": 1984
+ },
+ {
+  "match": "^Jalur Kereta Api Padang Panjang–Sawahlunto$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Padang_Panjang%E2%80%93Sawahlunto",
+  "opened": 1887,
+  "closed": 2014
+ },
+ {
+  "match": "^Jalur Kereta Api Tebing Tinggi–Kisaran$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Tebing_Tinggi%E2%80%93Kisaran",
+  "opened": 1915
+ },
+ {
+  "match": "^Jalur Kereta Api Padang Panjang–Payakumbuh–Limbanang$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Padang_Panjang%E2%80%93Payakumbuh%E2%80%93Limbanang",
+  "opened": 1891
+ },
+ {
+  "match": "^Jalur Trem Babat–Jombang$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Babat%E2%80%93Jombang",
+  "opened": 1898,
+  "closed": 1974
+ },
+ {
+  "match": "^Jalur Trem Rembang–Blora–Cepu$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_trem_Rembang%E2%80%93Blora%E2%80%93Cepu",
+  "opened": 1902,
+  "closed": 1984
+ },
+ {
+  "match": "^Jalur Kereta Api Kalisat–Panarukan$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Kalisat%E2%80%93Panarukan",
+  "opened": 1897,
+  "closed": 2004
+ },
+ {
+  "match": "^Segmen Idi–Langsa$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_lintas_Aceh",
+  "opened": 1884
+ },
+ {
+  "match": "^Jalur Kereta Api Kedungjati–Ambarawa–Secang$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Kedungjati%E2%80%93Secang",
+  "opened": 1873,
+  "closed": 1976
+ },
+ {
+  "match": "^ทางรถไฟสายแม่กลอง$",
+  "source": "https://en.wikipedia.org/wiki/Maeklong_Railway",
+  "opened": 1901
+ },
+ {
+  "match": "^รถไฟฟ้าชานเมืองสายสีแดงเข้ม$",
+  "source": "https://en.wikipedia.org/wiki/Dark_Red_Line_(Bangkok)",
+  "opened": 2021
+ },
+ {
+  "match": "^Jalur Kereta Api Rangkasbitung–Labuan$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Labuan%E2%80%93Rangkasbitung",
+  "opened": 1906,
+  "closed": 1984
+ },
+ {
+  "match": "^Jalur Kereta Api Brumbung–Gundih$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Semarang%E2%80%93Surakarta%E2%80%93Yogyakarta",
+  "opened": 1867
+ },
+ {
+  "match": "^Jalur Kereta Api Yogyakarta–Secang$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Secang%E2%80%93Yogyakarta",
+  "opened": 1898,
+  "closed": 1975
+ },
+ {
+  "match": "^Jalur Kereta Api Gundih–Solo Balapan$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Semarang%E2%80%93Surakarta%E2%80%93Yogyakarta",
+  "opened": 1867
+ },
+ {
+  "match": "^Jalur Trem Jombang–Kediri$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_trem_Jombang%E2%80%93Kediri",
+  "opened": 1897,
+  "closed": 1984
+ },
+ {
+  "match": "^PNR Main Line North$",
+  "source": "https://en.wikipedia.org/wiki/PNR_North_Main_Line",
+  "opened": 1892,
+  "closed": 1997
+ },
+ {
+  "match": "^Jalur Kereta Api Tebing Tinggi–Siantar$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Tebing_Tinggi%E2%80%93Siantar",
+  "opened": 1916
+ },
+ {
+  "match": "^Jalur Kereta Api Cibatu–Cikajang$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Cibatu%E2%80%93Cikajang",
+  "opened": 1889
+ },
+ {
+  "match": "^Jalur Kereta Api Lumajang–Balung$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Lumajang%E2%80%93Balung",
+  "opened": 1913,
+  "closed": 1986
+ },
+ {
+  "match": "^Jalur Trem Krian–Ploso$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Krian%E2%80%93Ploso",
+  "opened": 1912,
+  "closed": 1974
+ },
+ {
+  "match": "^Jalur Kereta Api Kamalpier - Bangkalan - Kwanyar$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_lintas_Madura",
+  "opened": 1898,
+  "closed": 1937
+ },
+ {
+  "match": "^Jalur Kereta Api Duri–Tangerang$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Tangerang%E2%80%93Duri",
+  "opened": 1899
+ },
+ {
+  "match": "^Jalur Kereta Api Tegal–Prupuk$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Tegal%E2%80%93Prupuk",
+  "opened": 1886
+ },
+ {
+  "match": "^Jalur Kereta Api Wonokromo–Bangil$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Surabaya%E2%80%93Bangil%E2%80%93Kalisat",
+  "opened": 1878
+ },
+ {
+  "match": "^Jalur Kereta Api Purwosari–Wonogiri$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Purwosari%E2%80%93Wonogiri%E2%80%93Baturetno",
+  "opened": 1892
+ },
+ {
+  "match": "^Jalur Kereta Api Bandung–Ciwidey$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Bandung%E2%80%93Ciwidey",
+  "opened": 1921,
+  "closed": 1982
+ },
+ {
+  "match": "^Jalur Trem Jurnatan–Rembang$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_trem_Jurnatan%E2%80%93Rembang",
+  "opened": 1883,
+  "closed": 1986
+ },
+ {
+  "match": "^Jalur Kereta Api Klakah–Lumajang–Pasirian$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Klakah%E2%80%93Lumajang%E2%80%93Pasirian",
+  "opened": 1896,
+  "closed": 1988
+ },
+ {
+  "match": "^Segmen Langsa–Kuala Simpang$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_lintas_Aceh",
+  "opened": 1884
+ },
+ {
+  "match": "^สายสวรรคโลก$",
+  "source": "https://en.wikipedia.org/wiki/Sawankhalok_Line",
+  "opened": 1910
+ },
+ {
+  "match": "^Jalur Kereta Api Belawan–Medan$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Belawan%E2%80%93Medan",
+  "opened": 1886
+ },
+ {
+  "match": "^Jalur Kereta Api Yogyakarta–Palbapang–Sewugalur$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Yogyakarta%E2%80%93Palbapang%E2%80%93Sewugalur",
+  "opened": 1895
+ },
+ {
+  "match": "^Jalur Trem Maos–Purwokerto Timur$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Maos%E2%80%93Purwokerto_Timur",
+  "opened": 1896
+ },
+ {
+  "match": "^Jalur Kereta Api Secang–Parakan$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Parakan%E2%80%93Secang",
+  "opened": 1907,
+  "closed": 1967
+ },
+ {
+  "match": "^Jalur Kereta Api Semarang–Brumbung$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Semarang%E2%80%93Surakarta%E2%80%93Yogyakarta",
+  "opened": 1867
+ },
+ {
+  "match": "^สายใต้เดิม$",
+  "source": "https://en.wikipedia.org/wiki/Southern_Line_(Thailand)",
+  "opened": 1903
+ },
+ {
+  "match": "^Jalur Kereta Api Muaro Kalaban–Pekanbaru$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Muaro_Kalaban%E2%80%93Muaro%E2%80%93Pekanbaru",
+  "opened": 1924
+ },
+ {
+  "match": "^Jalur Kereta Api Merakurak - Babat$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Merakurak%E2%80%93Babat",
+  "opened": 1920
+ },
+ {
+  "match": "^Segmen Keude Breueh–Sigli$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_lintas_Aceh",
+  "opened": 1884
+ },
+ {
+  "match": "^Jalur Kereta Api Cilacap–Maos$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Cilacap%E2%80%93Yogyakarta",
+  "opened": 1887
+ },
+ {
+  "match": "^Jalur Kereta Api Kisaran–Tanjung Balai$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Kisaran%E2%80%93Tanjungbalai",
+  "opened": 1915
+ },
+ {
+  "match": "^Jalur Kereta Api Babat–Merakurak$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Merakurak%E2%80%93Babat",
+  "opened": 1920
+ },
+ {
+  "match": "^Jalur Trem Malang Kotalama–Gondanglegi$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_trem_Malang_Kotalama%E2%80%93Gondanglegi%E2%80%93Dampit",
+  "opened": 1897,
+  "closed": 1978
+ },
+ {
+  "match": "^Jalur Kereta Api Lubuk Alung–Naras$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Lubuk_Alung%E2%80%93Naras%E2%80%93Sungai_Limau",
+  "opened": 1908
+ },
+ {
+  "match": "^Jalur Trem Karawang–Rengasdengklok$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_trem_lintas_Karawang",
+  "opened": 1909,
+  "closed": 1972
+ },
+ {
+  "match": "^Jalur Kereta Api Wonogiri–Baturetno$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Purwosari%E2%80%93Wonogiri%E2%80%93Baturetno",
+  "opened": 1892
+ },
+ {
+  "match": "^Jalur Kereta Api Binjai–Kuala$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Binjai%E2%80%93Kuala",
+  "opened": 1890,
+  "closed": 2002
+ },
+ {
+  "match": "^Segmen Seulimeum–Keude Breueh \\(Padang Tiji\\)$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_lintas_Aceh",
+  "opened": 1884
+ },
+ {
+  "match": "^Segmen Glekambing–Seulimeum$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_lintas_Aceh",
+  "opened": 1884
+ },
+ {
+  "match": "^Jalur Kereta Api Krenceng–Anyerkidul$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Anyer_Kidul%E2%80%93Kampung_Bandan",
+  "opened": 1899
+ },
+ {
+  "match": "^Jalur Trem Jatibarang–Indramayu$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_trem_Indramayu%E2%80%93Jatibarang%E2%80%93Karangampel",
+  "opened": 1912,
+  "closed": 1973
+ },
+ {
+  "match": "^Jalur Kereta Api Dayeuhkolot–Majalaya$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Dayeuhkolot%E2%80%93Majalaya",
+  "opened": 1922,
+  "closed": 1942
+ },
+ {
+  "match": "^Jalur Trem Purwodadi–Gundih$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_trem_Purwodadi%E2%80%93Gundih",
+  "opened": 1884,
+  "closed": 1986
+ },
+ {
+  "match": "^Jalur Trem Jatibarang–Karangampel$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_trem_Indramayu%E2%80%93Jatibarang%E2%80%93Karangampel",
+  "opened": 1912,
+  "closed": 1973
+ },
+ {
+  "match": "^Jalur Trem Kepanjen–Gondanglegi$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_trem_Kepanjen%E2%80%93Gondanglegi",
+  "closed": 1943
+ },
+ {
+  "match": "^Jalur Kereta Api Kamalpier - Kwanyar$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_lintas_Madura",
+  "opened": 1898,
+  "closed": 1937
+ },
+ {
+  "match": "^Jalur Kereta Api Kandangan–Gresik–Sumari$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Sumari%E2%80%93Gresik%E2%80%93Kandangan",
+  "opened": 1902
+ },
+ {
+  "match": "^Jalur Kereta Api Tegal–Semarang–Brumbung$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Cirebon%E2%80%93Semarang",
+  "opened": 1897
+ },
+ {
+  "match": "^Circular Railway$",
+  "source": "https://en.wikipedia.org/wiki/Yangon_Circular_Railway",
+  "opened": 1954
+ },
+ {
+  "match": "^Jalur trem segmen Karawang–Wadas$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_trem_lintas_Karawang",
+  "opened": 1909,
+  "closed": 1972
+ },
+ {
+  "match": "^Jalur trem segmen Wadas–Cikampek$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_trem_lintas_Karawang",
+  "opened": 1909,
+  "closed": 1972
+ },
+ {
+  "match": "^Jalur Trem Gondanglegi–Dampit$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_trem_Malang_Kotalama%E2%80%93Gondanglegi%E2%80%93Dampit",
+  "opened": 1897,
+  "closed": 1978
+ },
+ {
+  "match": "^Segmen Beureunun–Lhokseumawe$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_lintas_Aceh",
+  "opened": 1884
+ },
+ {
+  "match": "^Jalur Kereta Api Maos–Kroya$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Cilacap%E2%80%93Yogyakarta",
+  "opened": 1887
+ },
+ {
+  "match": "^Jalur Kereta Api Bukit Putus–Indarung$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Bukit_Putus%E2%80%93Indarung",
+  "opened": 1979
+ },
+ {
+  "match": "^Jalur Kereta Api Rancaekek–Tanjungsari$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Rancaekek%E2%80%93Tanjungsari",
+  "opened": 1921,
+  "closed": 1942
+ },
+ {
+  "match": "^Jalur Kereta Api Telang - Kwanyar$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_lintas_Madura",
+  "opened": 1898,
+  "closed": 1937
+ },
+ {
+  "match": "^Burma Railway$",
+  "source": "https://en.wikipedia.org/wiki/Burma_Railway",
+  "opened": 1943,
+  "closed": 1947
+ },
+ {
+  "match": "^Segmen Besitang–Pangkalan Susu$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_lintas_Aceh",
+  "opened": 1884
+ },
+ {
+  "match": "^Segmen Banda Aceh–Lambaro$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_lintas_Aceh",
+  "opened": 1884
+ },
+ {
+  "match": "^Jalur Trem Pare–Kepung$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_trem_Pare%E2%80%93Kepung",
+  "opened": 1898,
+  "closed": 1947
+ },
+ {
+  "match": "^Jalur Kereta Api Medan–Batu$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Medan%E2%80%93Batu",
+  "opened": 1887,
+  "closed": 1988
+ },
+ {
+  "match": "^Jalur Kereta Api Kutoarjo–Purworejo$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Cilacap%E2%80%93Yogyakarta",
+  "opened": 1887
+ },
+ {
+  "match": "^Jalur Kereta Api Rambipuji–Balung$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Rambipuji%E2%80%93Balung%E2%80%93Puger",
+  "opened": 1913,
+  "closed": 1986
+ },
+ {
+  "match": "^Jalur Trem Mojokerto–Gemekan$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_trem_Pabrik_Spiritus_Wates%E2%80%93Mojokerto_Kota%E2%80%93Gemekan",
+  "opened": 1889,
+  "closed": 1943
+ },
+ {
+  "match": "^ทางรถไฟสายมรณะ$",
+  "source": "https://en.wikipedia.org/wiki/Burma_Railway",
+  "opened": 1943,
+  "closed": 1947
+ },
+ {
+  "match": "^Jalur Kereta Api Kandangan–Indro$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Sumari%E2%80%93Gresik%E2%80%93Kandangan",
+  "opened": 1902
+ },
+ {
+  "match": "^Segmen Kuala Simpang–Semadam$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_lintas_Aceh",
+  "opened": 1884
+ },
+ {
+  "match": "^Segmen Langsa–Kuala Langsa$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_lintas_Aceh",
+  "opened": 1884
+ },
+ {
+  "match": "^Segmen Lambaro–Glekambing \\(Indrapuri\\)$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_lintas_Aceh",
+  "opened": 1884
+ },
+ {
+  "match": "^Jalur Trem Gurah–Kawarasan$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_trem_Gurah%E2%80%93Kawarasan",
+  "opened": 1899,
+  "closed": 1947
+ },
+ {
+  "match": "^Jalur Kereta Api Kilometertiga–Tarahan$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Kilometertiga%E2%80%93Tarahan",
+  "opened": 1986
+ },
+ {
+  "match": "^Jalur Kereta Api Purwosari–Boyolali$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Purwosari%E2%80%93Boyolali",
+  "closed": 1973
+ },
+ {
+  "match": "^Jalur Kereta Api Muaro Kalaban–Muaro–Pekanbaru$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Muaro_Kalaban%E2%80%93Muaro%E2%80%93Pekanbaru",
+  "opened": 1924
+ },
+ {
+  "match": "^Jalur Kereta Api Cikudapateuh–Ciwidey$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Bandung%E2%80%93Ciwidey",
+  "opened": 1921,
+  "closed": 1982
+ },
+ {
+  "match": "^Jalur Trem Balung–Ambulu$",
+  "source": "https://id.wikipedia.org/wiki/Jalur_trem_Balung%E2%80%93Ambulu",
+  "opened": 1913
+ },
+ {
+  "match": "^Jalur Kereta Api Gambringan–Surabaya Pasarturi$",
+  "opened": 1900,
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Gundih%E2%80%93Surabaya_Pasarturi"
+ },
+ {
+  "match": "^Jalur Kereta Api Gundih–Gambringan$",
+  "opened": 1900,
+  "source": "https://id.wikipedia.org/wiki/Jalur_kereta_api_Gundih%E2%80%93Surabaya_Pasarturi"
+ },
+ {
+  "match": "^Jalur Kereta Cepat Jakarta–Bandung$",
+  "opened": 2023,
+  "source": "https://id.wikipedia.org/wiki/Kereta_cepat_Whoosh"
+ },
+ {
+  "match": "^Kereta Cepat Jakarta–Bandung$",
+  "opened": 2023,
+  "source": "https://id.wikipedia.org/wiki/Kereta_cepat_Whoosh"
+ },
+ {
+  "match": "^Kereta Cepat Indonesia China$",
+  "opened": 2023,
+  "source": "https://id.wikipedia.org/wiki/Kereta_cepat_Whoosh"
+ },
+ {
+  "match": "^ទៀតពីភ្នំពេញទៅប៉ោយប៉ែត$",
+  "opened": 1932,
+  "source": "https://en.wikipedia.org/wiki/Rail_transport_in_Cambodia"
+ },
+ {
+  "match": "^ផ្លូវរថភ្លើងភ្នំពេញ$",
+  "opened": 1932,
+  "source": "https://en.wikipedia.org/wiki/Rail_transport_in_Cambodia"
+ },
+ {
+  "match": "^Mandalay to Myitkyinar Railway\\(မန္တလေး၊မြစ်ကြီးနားရထားလမ်း\\)$",
+  "opened": 1891,
+  "source": "https://en.wikipedia.org/wiki/Rail_transport_in_Myanmar"
+ },
+ {
+  "match": "^မန္တလေး-မြစ်ကြီးနားရထားလမ်း$",
+  "opened": 1891,
+  "source": "https://en.wikipedia.org/wiki/Rail_transport_in_Myanmar"
+ },
+ {
+  "match": "^ရန်ကုန်-မန္တလေးရထားလမ်း$",
+  "opened": 1884,
+  "source": "https://en.wikipedia.org/wiki/Rail_transport_in_Myanmar"
+ },
+ {
+  "match": "^Laluan Keretapi Barat Sabah$",
+  "opened": 1896,
+  "source": "https://www.wikidata.org/wiki/Q1584305"
+ },
+ {
+  "match": "^Sabah State Railway$",
+  "opened": 1896,
+  "source": "https://www.wikidata.org/wiki/Q1584305"
+ },
+ {
+  "match": "^Burma Mines Railway$",
+  "opened": 1908,
+  "source": "https://www.wikidata.org/wiki/Q17027238"
+ },
+ {
+  "match": "^Đường sắt Hà Nội - Đồng Đăng$",
+  "opened": 1894,
+  "source": "https://www.wikidata.org/wiki/Q10841016"
+ },
+ {
+  "match": "^Đường sắt Hà Nội - Hải Phòng$",
+  "opened": 1902,
+  "source": "https://www.wikidata.org/wiki/Q10841014"
+ },
+ {
+  "match": "^Đường sắt Hà Nội - Quan Triều$",
+  "opened": 1962,
+  "source": "https://www.wikidata.org/wiki/Q10841017"
+ },
+ {
+  "match": "^Đường sắt Kép – Lưu Xá$",
+  "opened": 1966,
+  "source": "https://www.wikidata.org/wiki/Q10841018"
+ }
+]
