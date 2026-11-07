@@ -73,4 +73,6 @@ Jalankan pemeriksaan otomatis dengan `bun run test`. Lovable mengelola pratinjau
 
 Set `VITE_SITE_URL` saat build, misalnya `VITE_SITE_URL=https://contoh.dev bun run build`. Tanpa variabel ini, halaman tidak memuat `canonical`, `og:url`, dan `og:image`, karena crawler butuh URL lengkap.
 
+Setiap push ke `main` menjalankan `.github/workflows/deploy-pages.yml`, yang menguji, membangun, lalu menerbitkan `.output/public` ke GitHub Pages. Untuk meniru build ini di mesin sendiri, set `BASE_PATH=/seacrossingline`. Di Git Bash, tambahkan juga `MSYS_NO_PATHCONV=1` agar shell tidak mengubah nilai itu menjadi path Windows.
+
 `public/og.png` adalah tangkapan layar atlas berukuran 1200x630. Ambil ulang setelah tampilan peta berubah.

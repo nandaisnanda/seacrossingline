@@ -6,11 +6,16 @@
 // You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
+// Set BASE_PATH (e.g. /seacrossingline) when the site is served from a subpath, as on GitHub Pages.
+const basePath = process.env["BASE_PATH"]?.replace(/\/$/, "") || "";
+
 export default defineConfig({
+  vite: { base: `${basePath}/` },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
     // nitro/vite builds from this
     server: { entry: "server" },
     prerender: { enabled: true },
+    ...(basePath ? { router: { basepath: basePath } } : {}),
   },
 });
